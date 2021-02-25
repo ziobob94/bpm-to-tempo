@@ -36,22 +36,38 @@ export const TemposCollections : React.FC<TemposCollectionsProps> =  ({bpm, mult
                             <li className="TempoValues-containers" key={name + multiplier.toString()}>
                                 <span className="Tempos" key={name}
                                       id={name + multiplier.toString()}
-                                > {name + signature()} </span>
+                                >
+                                    <h3>
+                                        {name + signature()}
+                                    </h3>
+                                </span>
                                 <span className="TemposValue"
                                       key={name + multiplier}
                                       id={multiplier.toString() + "-multiplier"}
-                                > {(((convertFunction(bpm, multiply))) * multiplier).toFixed(2)} </span>
+                                >
+                                    <p>
+                                        {(((convertFunction(bpm, multiply))) * multiplier).toFixed(2)}
+                                    </p>
+                                    </span>
                             </li>)
                     }
                     else return (
                         <li className="TempoValues-containers" key={name + multiplier.toString()} style={style}>
                                 <span className="Tempos" key={name}
                                       id={name + multiplier.toString()}
-                                > {name + signature()} </span>
+                                >
+                                    <h3>
+                                        {name + signature()}
+                                    </h3>
+                                </span>
                             <span className="TemposValue"
                                   key={name + multiplier}
                                   id={multiplier.toString() + "-multiplier"}
-                            > {(((convertFunction(bpm, multiply))) * multiplier).toFixed(2)} </span>
+                            >
+                                <p>
+                                    {(((convertFunction(bpm, multiply))) * multiplier).toFixed(2)}
+                                </p>
+                            </span>
                         </li>
                     )
                 })

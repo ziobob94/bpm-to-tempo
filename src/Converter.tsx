@@ -18,13 +18,16 @@ const Converter : React.FC<ConverterProps> = ({onBpmChange,bpm}) => {
     },[]);
 
 
+
     return (
              <div className="Converter-wrapper">
                      <form className="Converter-form">
-                         <h2>INSERT BPM</h2>
-                         <input className="My-input" id="bpm-input" type="number" onChange={ bpmChange } placeholder="120 bpm"/>
-                         <div id="conversion-result"> {convertFunction(bpm).toFixed(2)}</div>
-                         <h2>MS</h2>
+                         <h4>INSERT BPM</h4>
+                         <input className="My-input" id="bpm-input" type="number" onChange={ bpmChange } placeholder="120" min="0" max="500"/>
+                         <div className="My-input" id="conversion-result">
+                             <h4>{convertFunction(bpm).toFixed(2)}</h4>
+                         </div>
+                         <h4>MS</h4>
                      </form>
             </div>
     )
