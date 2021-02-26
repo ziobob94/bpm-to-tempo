@@ -1,5 +1,5 @@
 {
-  "name": "bpm-to-tempo-converter",
+  "name": "bpm-to-tempo",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
