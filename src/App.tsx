@@ -36,7 +36,9 @@ const App : React.FC = () => {
                     <TemposCollections bpm={bpm} multiplier={tripletMultiplier}/>
                 </div>
             </div>
-            <footer/>
+            <footer className="My-footer" >
+                <a href="mailto:mauro.ciccullo@hotmail.com"> Contact webmaster </a>
+            </footer>
         </div>
     );
 }

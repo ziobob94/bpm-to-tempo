@@ -14,7 +14,6 @@ const Converter : React.FC<ConverterProps> = ({onBpmChange,bpm}) => {
     let bpmChange = useCallback((e : ChangeEvent<HTMLInputElement>) => {
         let str = e.target.value
         let num: number = +str;
-        console.log(num)
         if (num > 1000) {
             num = 1000;
             onBpmChange(num);

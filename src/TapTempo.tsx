@@ -34,7 +34,7 @@ const TapTempo : React.FC<TapTempoProps> = ({onBpmChange}) => {
         const newBeat: Beat = {
             ts: new Date()
         }
-        const count = (stars.match(/\👽/g) || []).length;
+        const count = (stars.match(/👽/g) || []).length;
         setColor(colorsArray[count % 4]);
         if (beats.length === 3){
             const t1: number = beats[1].ts.getTime() - beats[0].ts.getTime();
@@ -49,7 +49,7 @@ const TapTempo : React.FC<TapTempoProps> = ({onBpmChange}) => {
                 setStars(`${stars} 👽    -`);
             }
             setBpmCalc(bpm);
-            onBpmChange(bpm);;
+            onBpmChange(bpm);
         } else {
             setBeats([...beats, newBeat]);
             if(count < 15) {
@@ -69,6 +69,7 @@ const TapTempo : React.FC<TapTempoProps> = ({onBpmChange}) => {
                 <h2>{Math.round(bpmCalc)}</h2>
                 <h2>{stars}</h2>
             </div>
+
             <div className="Buttons-wrapper">
                 <button onMouseDown={initTapper} className="My-button" id="resetbutton">
                     <h3>RESET</h3>

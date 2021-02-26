@@ -1,4 +1,4 @@
-import React, {useCallback, useState} from "react";
+import React from "react";
 import {convertFunction, NormalTempo} from "./tempos";
 
 interface TemposCollectionsProps {
@@ -14,7 +14,6 @@ export const TemposCollections : React.FC<TemposCollectionsProps> =  ({bpm, mult
 
     let insertMeasures  = (multiply : number) => {
         let g = (((convertFunction(bpm, multiply))) * multiplier);
-        console.log(g)
         if (g > 1000) {
             measure = " s";
             return (g / 1000).toFixed(1);
@@ -36,10 +35,21 @@ export const TemposCollections : React.FC<TemposCollectionsProps> =  ({bpm, mult
 
     const style2 = {
         background: "#2e855385",
+        borderRadius : "9%",
+        borderColor : "#ddfcff36",
+        borderStyle: "groove",
+        borderWidth: "thin",
+        paddingRight : "0.5%"
     }
 
     const style3 = {
-        background: "#194a2a66"
+        background: "#194a2a66",
+        borderRadius : "9%",
+        borderColor : "#ddfcff36",
+        borderStyle: "groove",
+        borderWidth: "thin",
+        paddingRight : "0.5%"
+
     }
 
     let insertElements = () =>
