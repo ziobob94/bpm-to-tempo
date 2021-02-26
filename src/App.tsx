@@ -7,7 +7,8 @@ import {dotMultiplier, tripletMultiplier} from "./tempos";
 
 
 const App : React.FC = () => {
-    const [bpm,setBpm] = useState(120);
+    const [bpm,setBpm] = useState<number>(0);
+
 
     let updateBpm = (bpm : number) => {
         setBpm(bpm)
@@ -18,8 +19,8 @@ const App : React.FC = () => {
             <header className="App-header">
                 <h1>BPM TO TEMPO CONVERTER</h1>
             </header>
-            <TapTempo/>
-            <Converter onBpmChange={updateBpm} bpm={bpm}/>
+            <TapTempo onBpmChange={updateBpm}/>
+            <Converter onBpmChange={updateBpm} bpm={bpm}  />
             <div className="TempoShowing-wrapper" >
 
                 <div className="TemposMetrics" id={"normal-multi"}>

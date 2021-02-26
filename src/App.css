@@ -1,23 +1,25 @@
 /******* GENERAL ******/
-
+html,body > * {
+  overflow: hidden;
+}
 h1,h2,h3,h4,p,input{
   margin: 0;
   color: #f5feff;
 }
 h1{
-  font-size: 3.5em;
-  margin-top: 3%;
+  font-size: 2.9em;
   font-weight: 400;
 }
-h2,input{
+h2{
   font-size: 1.8em;
+  font-weight: 400;
+}
+h3,input{
+  font-size: 1.3em;
   font-weight: 500;
 }
-h3{
-  font-size: 1.3em;
-}
 h4,input{
-  font-size: 2.5em;
+  font-size: 2em;
   font-weight: 300;
   margin-left : 3%;
 }
@@ -29,12 +31,15 @@ li,ul{
   color: #f5ecf9;
 }
 
-p{
-  font-weight: 400;
+p {
+  font-weight: 300;
   font-style: normal;
   font-size: 1.4em;
 }
 
+#bpms-insert{
+  width:15em;
+}
 
 .App-wrapper {
   text-align: center;
@@ -66,29 +71,77 @@ p{
 }
 
 .My-button {
-  height: 6%;
-  width: 15%;
-  margin-top: 1%;
-
+  height: 3em;
+  width: 26%;
+  margin-left: 6%;
+  margin-right: 6%;
+  background-color: #3a404e;
+  transition-duration: 0.4s;
+  border-radius: 9px;
+  box-shadow: 0 0 7px 0 #9ba07954;
+  border: solid;
+  border-width: thin;
+  border-color: #04100247;
 }
+
+.My-button:hover,#bpm-input:hover{
+  background-color: #455683;
+  color: white;
+  cursor: pointer;
+}
+
+.button:after{
+  content: "";
+  background: #f1f1f1;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+.button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}
+
+.My-button:focus{
+  border-color: #3D1A56;
+}
+
 .My-input{
   min-width: 25%;
-  height: 90%;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   background: none;
   margin-left: 3%;
-  border-color: #ddfcff80;
+  width: 21%;
+  text-align: center;
+  color: #f5feff;
+
+}
+
+#bpm-input{
+  border-color: #ddfcff2b;
   border-style: groove;
   border-width: thin;
   border-radius: 9px;
+  transition-duration: 0.4s;
+}
+
+input:hover{
+  cursor: pointer;
 }
 
 /********** CONVERTER ***************/
 
 .Converter-wrapper {
-  height: 12%;
   width: 70%;
   display: flex;
   flex-direction: column;
@@ -112,27 +165,21 @@ p{
   color: #f5feff;
 }
 
+
+.Converter-form > h4 {
+  width : 20%;
+}
+
 input[type=number]::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 
 
-#conversion-result {
-  width: 21%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #f5feff;
-  border-color: #ddfcff2b;
-  border-style: groove;
-  border-width: thin;
-  border-radius: 9px;
-}
 
 /************** TAPTEMPO*************/
 
 .TapTempo-wrapper {
+  padding: 1%;
   position: relative;
   min-height: 18%;
   width: 50%;
@@ -140,20 +187,39 @@ input[type=number]::-webkit-inner-spin-button {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  align-items: center;
-  margin-top: 2%;
+  align-items: center;;
   border-radius: 9px;
   box-shadow: 0 0 7px 0 #9ba07954;
   border: solid;
   border-width: thin;
   border-color: #04100247;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+}
+
+.TapTempo-wrapper:hover {
+  cursor: pointer;
+}
+
+.Buttons-wrapper {
+  width: 78%;
+  height: 4%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /************** TEMPOSHOWING *************/
 
 .TempoShowing-wrapper {
   min-height: 60%;
-  width: 80%;
+  width: 84%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -174,6 +240,10 @@ input[type=number]::-webkit-inner-spin-button {
   padding : 0.3%;
 }
 
+.TemposMetrics > h2 {
+  font-size: 1.4em;
+}
+
 .TemposList-wrapper{
   height: 60%;
   width: 100%;
@@ -182,6 +252,7 @@ input[type=number]::-webkit-inner-spin-button {
   justify-content: space-around;
   align-items: center;
 }
+
 
 .TempoValues-containers {
   height: 100%;

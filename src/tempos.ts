@@ -3,9 +3,13 @@ export const convertFunction = (bpm : number, time? : number) => {
     let result
     if (bpm > 0) {
         const formula = 60000 / bpm;
+
         if (time) {
             result = (formula * time);
-        } else result = formula;
+        }
+
+        else result = formula;
+
         return result;
     }
     else return 0;
