@@ -17,22 +17,19 @@ const App : React.FC = () => {
     return (
         <div className="App-wrapper">
             <header className="App-header">
-                <h1>BPM TO TEMPO CONVERTER</h1>
+                <h1>BPM TO TEMPO</h1>
             </header>
             <TapTempo onBpmChange={updateBpm}/>
             <Converter onBpmChange={updateBpm} bpm={bpm}  />
             <div className="TempoShowing-wrapper" >
 
                 <div className="TemposMetrics" id={"normal-multi"}>
-                    <h2> NORMAL </h2>
                     <TemposCollections bpm={bpm} multiplier={1}/>
                 </div>
                 <div className="TemposMetrics">
-                    <h2> DOTTED </h2>
                     <TemposCollections bpm={bpm} multiplier={dotMultiplier}/>
                 </div>
                 <div className="TemposMetrics">
-                    <h2> TRIPLETS </h2>
                     <TemposCollections bpm={bpm} multiplier={tripletMultiplier}/>
                 </div>
             </div>

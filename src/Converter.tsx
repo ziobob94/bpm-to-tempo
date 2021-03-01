@@ -20,7 +20,7 @@ const Converter : React.FC<ConverterProps> = ({onBpmChange,bpm}) => {
         }
         if (num < 0 ) onBpmChange(0);
         else onBpmChange(num);
-    },[]);
+    },[onBpmChange]);
 
 
     return (
@@ -32,12 +32,12 @@ const Converter : React.FC<ConverterProps> = ({onBpmChange,bpm}) => {
                      <input className="My-input" id="bpm-input" type="number"  onChange={ bpmChange } placeholder="BPM" min={0} max={10000}/>
 
 
-                <div className="My-input" id="conversion-result">
+                <div className="My-input results" >
                      <h4>{convertFunction(bpm).toFixed(1)}</h4>
                      <h4>ms</h4>
                  </div>
 
-                 <div className="My-input" id="conversion-result-seconds">
+                 <div className="My-input results" >
                      <h4>{convertFunction(bpm*1000).toFixed(2)}</h4>
                      <h4>s</h4>
                  </div>

@@ -1,5 +1,3 @@
-# bpm-to-tempo converter 
+# Getting Started BPM TO TEMPO
 
-Easy app to calculate the milliseconds in accord to bpm
-
-
+Tap or write bpm to convert in a time's measure
